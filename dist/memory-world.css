@@ -2,3 +2,14 @@
 @media(max-width:700px){.worlds-button{font-size:9px;padding:9px 10px}.world-library-modal{padding:27px 20px}.world-library-modal>h2{font-size:28px}.world-cards{grid-template-columns:1fr;gap:14px}.world-card>svg{height:120px}.world-card>h3{font-size:22px}.world-library-modal>.library-intro{font-size:11px}.memory-tools{top:96px;left:20px;width:205px;padding:15px}.memory-world-caption h3{font-size:22px;margin:8px 0}.memory-world-caption p{font-size:9px;margin:6px 0}.memory-tool-buttons{gap:6px;margin-top:12px}.memory-tool-buttons .primary{padding:11px;font-size:10px}.memory-tool-buttons .secondary{padding:9px;font-size:9px}.memory-tools>small{font-size:5px;letter-spacing:1px;margin-top:13px}.memory-world-caption .eyebrow{font-size:6px}.memory-editor-modal>h2,.world-settings-modal>h2{font-size:27px}.two-fields{gap:10px}.memory-editor-modal label,.world-settings-modal label{font-size:9px;margin:12px 0}.avatar-colors{gap:10px}.avatar-colors label{font-size:8px}.local-world-note{font-size:9px!important}.memory-reveal-text{font-size:15px;line-height:1.8}.memory-reveal-card{padding:30px 25px}.memory-reveal-card>h2{font-size:27px}.memory-mode .prompt{bottom:85px}.memory-mode .location{bottom:27px;max-width:230px;font-size:7px}.digging-note{font-size:13px;bottom:170px}.welcome-memory-link{font-size:10px;margin-top:18px}.topbar .brand{gap:8px}.topbar .brand small{letter-spacing:1.3px}}
 
 .memory-guest .controls>span:last-child:after{content:'E uncover a memory · drag to look · scroll to zoom'}.memory-mode .toast{max-width:calc(100vw - 340px)}@media(max-width:700px){.memory-mode .toast{max-width:90vw}}
+
+/* Decorate panel and custom world colors */
+.decorate-panel{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);z-index:30;width:min(560px,calc(100vw - 32px));padding:14px 16px;border-radius:20px;background:rgba(251,248,236,.94);box-shadow:0 14px 40px rgba(55,64,48,.18);backdrop-filter:blur(10px);display:grid;gap:10px}
+.decorate-panel.hidden{display:none}
+.prop-buttons{display:flex;flex-wrap:wrap;gap:6px}
+.prop-buttons button{padding:7px 11px;font-size:13px;border-radius:999px}
+.decorate-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.decorate-panel small{opacity:.65;font-size:11px;letter-spacing:.08em}
+.world-colors{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end}
+.world-colors .text-button{grid-column:1/-1;justify-self:start}
+@media (max-width:600px){.world-colors{grid-template-columns:repeat(2,1fr)}.decorate-panel{bottom:150px}}

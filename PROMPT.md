@@ -51,3 +51,9 @@ You are building **Little Tides**, an original, cozy, single-player 3D browser g
 
 ## Future direction (document, don't fake)
 Real multi-device shared worlds need a server: accounts, hashed expiring/revocable invites, per-world member caps (1–10, atomic slot claims), private photo storage behind membership checks, per-person discovery records, presence separate from membership, and explicit import of local worlds. Keep that in `docs/future-sharing.md`.
+
+## Later additions
+- **Grass**: instanced curved, tapered blades (4 segments, root-to-tip vertex color gradient, per-instance tint), ~7000 desktop / 3500 touch. A vertex shader sways them in the wind and bends them away from Pip's position.
+- **Characters**: soft-shaded head with ears, blush, shiny eyes that blink every ~4 s, nose and smile, hair under a domed straw hat with a band and flower, a capsule raincoat with a flared hem, toggles and a pocket, cuffs and round hands, capsule boots with soles, a rounded backpack with a bedroll. Coat meshes keep using `mat(coat)` so memory worlds can recolor them.
+- **Solid world**: tree colliders roughly match the canopy (0.62×/0.85× scale), stones over 0.45 are solid, orchard trees and small mushrooms are solid (bouncy caps stay climbable). Bridge railings: once on a span, you're clamped between the rails, and you can't step onto the middle of a span from the side. Collisions are 2D circles, so jumping can't skip them.
+- **World customization**: memory-world settings can override grass, leaf, water, and sky colors (with "Use theme colors"). A **Decorate ✿** panel places a round tree, blossom tree, pine, flower patch, rock, lantern (point light), mushroom, bench, fence, or heart arch 2.2 units in front of you, facing your direction (max 60). There's also "Remove nearest". Props are validated, saved, solid where it makes sense, and included in share links.
