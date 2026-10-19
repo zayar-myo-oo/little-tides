@@ -8,3 +8,7 @@ body::before{content:'';position:fixed;inset:0;background:linear-gradient(90deg,
 
 .night .brand,.night .weather,.night .location,.night .controls{color:#f0eddb}.night .coordinate{color:#cfdbd2}.night .location-dot{background:#dbe8c8}.night .welcome h1,.night .welcome>.eyebrow{color:#edf0dc}.night .welcome h1 em{color:#b8d4b9}.night .welcome>p,.night .welcome-note{color:#d1decb}.night::before{background:linear-gradient(90deg,#344f679c,transparent 65%)}
 
+
+/* Soft lens vignette for a filmic, cozy frame */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(40,48,40,.22) 100%);mix-blend-mode:multiply}
+body.photograph::before{opacity:.6}

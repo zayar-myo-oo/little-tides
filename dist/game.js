@@ -1,6 +1,7 @@
 import * as THREE from './vendor/three.module.js';
 import { buildExpansion } from './world-expansion.js';
 import { createMemoryWorld } from './memory-world.js';
+import { createPolish } from './polish.js';
 
 // Little Tides: original procedural art, character, world, and audio.
 const $ = id => document.getElementById(id);
@@ -184,6 +185,7 @@ const audio={ctx:null,on:false,timer:null,step:0,next:0,master:null,noise:null,
 };
 expansion.connect({state,saved,save,toast,audio,keys,show,openModal,closeModal});
 memory.connect({state,saved,keys,show,toast,audio,openModal,closeModal,start,setDay});
+const polish=createPolish({THREE,scene,renderer,sun,pip});
 function updateSound(){$('sound').querySelector('span').style.display=audio.on?'none':'';$('sound').setAttribute('aria-label',audio.on?'Turn off lo-fi music':'Turn on lo-fi music');$('sound').setAttribute('aria-pressed',String(audio.on));}
 $('sound').onclick=()=>audio.toggle();
 const palettes=[{name:'Golden afternoon',sky:'#bfd1c0',water:'#659e9d',light:'#ffe4bc',intensity:2.7,hemi:2.25,icon:'☀',exposure:1.08},{name:'Peach-hour daydream',sky:'#d6b6a1',water:'#8baba5',light:'#ffb180',intensity:2.5,hemi:1.9,icon:'◒',exposure:1.08},{name:'Blue-hour hush',sky:'#718a9d',water:'#526e83',light:'#d4d4ef',intensity:1.2,hemi:1.4,icon:'☾',exposure:1.05}];
@@ -229,6 +231,6 @@ function update(dt){state.t+=dt;const t=state.t,p=pip.g.position;if(!memory.acti
 }
 camera.position.set(45,60,65);camera.lookAt(cameraTarget);
 let ready=false;
-function frame(now){const dt=Math.min((now-lastTime)/1000,.05);lastTime=now;update(dt);renderer.render(scene,camera);if(!ready){ready=true;$('loading').style.opacity='0';setTimeout(()=>$('loading').remove(),650);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
+function frame(now){const dt=Math.min((now-lastTime)/1000,.05);lastTime=now;update(dt);polish.update(now/1000,document.body.classList.contains('night'));renderer.render(scene,camera);if(!ready){ready=true;$('loading').style.opacity='0';setTimeout(()=>$('loading').remove(),650);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 // Compact read-only diagnostics for maintenance and smoke checks.
 window.littleTides={get status(){return {playing:state.playing,fishing:state.fishing,location:$('location-name').textContent,position:pip.g.position.toArray(),species:species.filter(f=>saved.fish[f.name]).length,released:saved.released,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles};}};

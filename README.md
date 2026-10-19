@@ -10,7 +10,11 @@ Walk to a hiding place and choose **Hide a memory** (or B). Add a title, letter,
 
 Worlds and memories use `little-tides-memory-v1` in localStorage, separate from the original fish and exploration save. Refresh preserves saved content and discoveries, but starts at the main menu. Data remains specific to the browser and site origin; local preview data does not automatically move to the hosted Site. Clearing browser storage removes it. Total photo capacity depends on the browser's storage quota.
 
-**Not yet implemented:** online invite links, separate-device visits, real multiplayer, server-enforced guest limits, and cloud photo storage. The published Site remains owner-private. The planned sharing model is documented in `docs/future-sharing.md`; no inactive sharing controls pretend to enforce it.
+**Share a link:** in creator view, press **Share a link ↗**. The whole world (names, letters, and photos shrunk to ~420px) is gzip-compressed into the link's `#gift=` fragment, which browsers never send to the server. Whoever opens it gets a visit-only copy on their own device. Anyone holding the link can read it, so send it privately. Very large photo sets fall back to a letters-only link.
+
+**Hosting so others can open it:** push to GitHub and enable *Settings → Pages → Source: GitHub Actions*; `.github/workflows/pages.yml` publishes `dist/` to a public URL. `npm start` also listens on all interfaces, so people on the same Wi-Fi can open `http://<your-ip>:4173`.
+
+**Not yet implemented:** server-backed invites, separate-device visits, real multiplayer, server-enforced guest limits, and cloud photo storage. The published Site remains owner-private. The planned sharing model is documented in `docs/future-sharing.md`; no inactive sharing controls pretend to enforce it.
 
 `dist/memory-world.js` and `dist/memory-world.css` contain the prototype. All scenery and character models are original procedural geometry; the sample letters are editable placeholders.
 
