@@ -13,3 +13,9 @@
 .world-colors{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end}
 .world-colors .text-button{grid-column:1/-1;justify-self:start}
 @media (max-width:600px){.world-colors{grid-template-columns:repeat(2,1fr)}.decorate-panel{bottom:150px}}
+.decorate-panel{bottom:auto;top:96px;left:auto;right:16px;transform:none;width:min(420px,calc(100vw - 32px))}
+.decorate-handle{cursor:grab;user-select:none;touch-action:none}
+.prop-buttons button.chosen{background:#3f6b57;color:#fff8ea;border-color:#3f6b57}
+.decorate-row{flex-wrap:wrap;justify-content:flex-start}
+.delete-world{color:#b0574c}
+@media (max-width:600px){.decorate-panel{top:auto;bottom:150px;right:16px}}
