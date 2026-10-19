@@ -7,3 +7,4 @@
 body::before{content:'';position:fixed;inset:0;background:linear-gradient(90deg,#dce5d5c9 0%,#dce5d580 24%,transparent 55%);pointer-events:none;z-index:1;transition:opacity .8s}body.playing::before{opacity:0}.topbar,.location,.bottom-right{z-index:5}@media(max-width:700px){body::before{background:linear-gradient(105deg,#dce5d5e0 0%,#dce5d59c 40%,transparent 80%)}.welcome>p{color:#435e4c}.welcome-note{color:#506d57}.playing .location{max-width:140px;font-size:6px}.playing .objectives{width:204px}}
 
 .night .brand,.night .weather,.night .location,.night .controls{color:#f0eddb}.night .coordinate{color:#cfdbd2}.night .location-dot{background:#dbe8c8}.night .welcome h1,.night .welcome>.eyebrow{color:#edf0dc}.night .welcome h1 em{color:#b8d4b9}.night .welcome>p,.night .welcome-note{color:#d1decb}.night::before{background:linear-gradient(90deg,#344f679c,transparent 65%)}
+

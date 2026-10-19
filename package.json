@@ -1,1 +1,1 @@
-{"name":"little-tides","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check dist/game.js && node --check server.mjs"}}
+{"name":"little-tides","private":true,"version":"2.1.0","type":"module","scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check dist/game.js && node --check dist/world-expansion.js && node --check dist/memory-world.js && node --check server.mjs"}}
